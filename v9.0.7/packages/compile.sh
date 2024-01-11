@@ -24,6 +24,13 @@ ldconfig
 touch /etc/authbind/byport/80
 chmod 500 /etc/authbind/byport/80
 
+# Configure user and group
+groupadd -g 1000 tomcat
+useradd --shell /bin/bash --uid 1000 --gid 1000 tomcat
+
+# Change ownership of apache-tomcat
+chown -R tomcat:tomcat $CATALINA_HOME
+
 # Cleanup
 rm -Rf /usr/local/apache-ant-1.10.1
 rm -Rf /usr/local/apr-1.6.3

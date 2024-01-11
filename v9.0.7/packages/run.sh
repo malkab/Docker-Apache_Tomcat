@@ -12,4 +12,4 @@ export LC_ALL=$LOCALE
 
 locale
 
-exec gosu root $CATALINA_HOME/bin/catalina.sh run
+exec gosu tomcat $CATALINA_HOME/bin/catalina.sh run
